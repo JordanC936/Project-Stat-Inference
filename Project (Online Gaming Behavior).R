@@ -25,7 +25,7 @@ barplot(table(gaming$GameGenre),
         
         xlab = "Genre of the Game", 
         
-        ylab = "Percentage")
+        ylab = "Player Prefernce")
 
 barplot(table(gaming$GameDifficulty), 
               
@@ -33,7 +33,7 @@ barplot(table(gaming$GameDifficulty),
               
               xlab = "Game Difficulty", 
               
-              ylab = "Percentage")
+              ylab = "Players by Difficulty")
 
 
 
@@ -50,7 +50,7 @@ hist(gaming$PlayTimeHours, xaxp = c(1.146866e-04, 2.399959e+01, 14),
          
          xlab = "Play Time Hours",  
          
-         ylab = "Hours Spent Per Session")
+         ylab = "Number of Playtime Hours")
 
 
 #Customizing scale of AvgSessions, use range()
@@ -63,4 +63,4 @@ hist(gaming$AvgSessionDurationMinutes, xaxp = c(10, 179, 17),
      
      xlab = "Average Sessions Durations", 
      
-     ylab = "Number of Gaming Session in Mins")
+     ylab = "Number of Session Durations")
