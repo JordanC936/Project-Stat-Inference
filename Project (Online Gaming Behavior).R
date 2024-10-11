@@ -1,4 +1,4 @@
-#Plotting histogram for PlayTimeHours/AvgSessions (Qualitative)
+#Plotting histogram for PlayTimeHours/AvgSessions (Quantitative)
 
 hist(gaming$PlayTimeHours, 
      
@@ -17,7 +17,7 @@ hist(gaming$AvgSessionDurationMinutes,
      
      ylab = "Number of Sessions Durations")
 
-#Plotting barplot for GameGenre/GameDifficulty (Quantitative)
+#Plotting barplot for GameGenre/GameDifficulty (Qualitative)
 
 barplot(table(gaming$GameGenre), 
         
@@ -64,3 +64,25 @@ hist(gaming$AvgSessionDurationMinutes, xaxp = c(10, 179, 17),
      xlab = "Average Sessions Durations", 
      
      ylab = "Number of Session Durations")
+
+#Computing mean/median/standard deviation/variance
+
+#PlayTimeHours (Quantitative)
+
+mean(gaming$PlayTimeHours)
+
+median(gaming$PlayTimeHours)
+
+sd(gaming$PlayTimeHours)
+
+var(gaming$PlayTimeHours)
+
+#AvgSessionDurationMins (Quantitative)
+
+mean(gaming$AvgSessionDurationMinutes)
+
+median(gaming$AvgSessionDurationMinutes)
+
+sd(gaming$AvgSessionDurationMinutes)
+
+var(gaming$AvgSessionDurationMinutes)
