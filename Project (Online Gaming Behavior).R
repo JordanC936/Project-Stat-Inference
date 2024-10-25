@@ -86,3 +86,17 @@ median(gaming$AvgSessionDurationMinutes)
 sd(gaming$AvgSessionDurationMinutes)
 
 var(gaming$AvgSessionDurationMinutes)
+
+#Plotting using scatterplot for data 
+
+plot(gaming$PlayTimeHours, gaming$AvgSessionDurationMinutes, 
+     
+     main = "Relationship between Play Time Hours and Average Session Durations", 
+     
+     xlab = "Play Time Hours", 
+     
+     ylab = "Average Session Durations")
+
+#Computing Correlation
+
+cor(gaming$PlayTimeHours, gaming$AvgSessionDurationMinutes)
