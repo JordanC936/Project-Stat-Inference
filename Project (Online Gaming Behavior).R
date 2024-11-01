@@ -100,3 +100,47 @@ plot(gaming$PlayTimeHours, gaming$AvgSessionDurationMinutes,
 #Computing Correlation
 
 cor(gaming$PlayTimeHours, gaming$AvgSessionDurationMinutes)
+
+#Computing the 95% confidence interval mean (2 Quantitative column)
+
+#Computing Play Time Hours
+
+xbar = mean(gaming$PlayTimeHours)
+xbar
+
+s = sd(gaming$PlayTimeHours)
+s
+
+n = 40034
+
+t = -qt(.025, n -1)
+t 
+
+#Calculating lower/upper bound
+
+L = xbar - t*s/sqrt(n) 
+L 
+
+U = xbar + t*s/sqrt(n) 
+U 
+
+#Computing AvgSessionDurationMinutes
+
+xbar = mean(gaming$AvgSessionDurationMinutes)
+xbar 
+
+s = sd(gaming$AvgSessionDurationMinutes)
+s
+
+n = 40034
+
+t = -qt(.025 , n -1)
+t
+
+#Calculating lower/upper bound
+
+L = xbar - t*s/sqrt(n) 
+L
+
+U = xbar + t*s/sqrt(n)
+U 
