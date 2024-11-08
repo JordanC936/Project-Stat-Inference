@@ -143,4 +143,46 @@ L = xbar - t*s/sqrt(n)
 L
 
 U = xbar + t*s/sqrt(n)
-U 
+U
+
+#Linear Regression (Simple)
+
+#AvgSessionDurtions as response/PlaytimeHours as predictor
+
+game.lm = lm(gaming$AvgSessionDurationMinutes ~ gaming$PlayTimeHours)
+game.lm
+
+#Scatterplot of Linear Model
+
+plot(gaming$AvgSessionDurationMinutes , gaming$AvgSessionDurationMinutes, 
+     
+     main = "Play Time Hours vs Avg Session Durations", 
+     
+     xlab = "Playtime Hours Measurements" , 
+     
+     ylab = "Avg Session Durations Measurements")
+
+#Suppose we want to predict the amount of hours at 70, 110, and 149
+
+predict(game.lm, newdata = data.frame(PlayTimeHours = c(70, 110, 149)))
+
+#Histogram of the Residual (Linear Model)
+
+hist(resid(game.lm))
+
+#Square computation of the Linear Model/Regression 
+
+cor(gaming$PlayTimeHours, gaming$AvgSessionDurationMinutes)
+
+cor(gaming$PlayTimeHours , gaming$AvgSessionDurationMinutes)^2
+
+#Recomputing linear model for gaming 
+
+game.lm = lm(gaming$AvgSessionDurationMinutes ~ gaming$PlayTimeHours)
+game.lm
+
+#Summary of model 
+
+summary((game.lm))
+
+summary(game.lm)$r.squared
