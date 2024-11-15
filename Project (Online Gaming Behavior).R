@@ -186,3 +186,25 @@ game.lm
 summary((game.lm))
 
 summary(game.lm)$r.squared
+
+#Hypothesis Testing (Null/Alternative)
+
+#Creating 2 hypothesis for AvgSessionDurations 
+
+#Null hypothesis - H0: mu = 30
+#Alternative - H1: mu > 30
+
+#Setting up t - test
+
+t_test = t.test(gaming$AvgSessionDurationMinutes, mu = 30, alternative = "greater")
+t_test
+
+#Now what if we wanna know the mean session across genders. 
+
+#Null hypothesis - H0: mu_male = mu_female
+#Alternative - H1: mu_male ≠ mu_female
+
+#Setting up t - test 
+
+t_test = t.test(gaming$AvgSessionDurationMinutes ~ gaming$Gender)
+t_test
