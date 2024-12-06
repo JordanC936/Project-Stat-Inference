@@ -208,3 +208,79 @@ t_test
 
 t_test = t.test(gaming$AvgSessionDurationMinutes ~ gaming$Gender)
 t_test
+
+#----------------------------------------
+
+#Let's go back to the scatter plot 
+
+plot(gaming$PlayTimeHours, gaming$AvgSessionDurationMinutes, 
+     
+     main = "Relationship between Play Time Hours and Average Session Durations", 
+     
+     xlab = "Play Time Hours", 
+     
+     ylab = "Average Session Durations")
+
+#Now what would happen if we plot based on location? 
+
+par(mfrow = c(1,4))
+
+plot(gaming$PlayTimeHours[gaming$Location == "USA"],
+     
+     gaming$AvgSessionDurationMinutes[gaming$Location == "USA"], 
+     
+     main = "USA", 
+     
+     xlab = "Play Time Hours", 
+     
+     ylab = "Average Session Durtions") 
+
+plot(gaming$PlayTimeHours[gaming$Location == "Europe"],
+     
+     gaming$AvgSessionDurationMinutes[gaming$Location == "Europe"], 
+     
+     main = "Europe", 
+     
+     xlab = "Play Time Hours", 
+     
+     ylab = "Average Session Durtions")
+
+plot(gaming$PlayTimeHours[gaming$Location == "Asia"],
+     
+     gaming$AvgSessionDurationMinutes[gaming$Location == "Asia"], 
+     
+     main = "Asia", 
+     
+     xlab = "Play Time Hours", 
+     
+     ylab = "Average Session Durtions")
+
+plot(gaming$PlayTimeHours[gaming$Location == "Other"],
+     
+     gaming$AvgSessionDurationMinutes[gaming$Location == "Other"], 
+     
+     main = "Other", 
+     
+     xlab = "Play Time Hours", 
+     
+     ylab = "Average Session Durtions")
+
+#Computing the correlation for all 4 data
+
+cor(gaming$PlayTimeHours[gaming$Location == "USA"], 
+    
+    gaming$AvgSessionDurationMinutes[gaming$Location == "USA"])
+
+cor(gaming$PlayTimeHours[gaming$Location == "Europe"], 
+    
+    gaming$AvgSessionDurationMinutes[gaming$Location == "Europe"])
+
+cor(gaming$PlayTimeHours[gaming$Location == "Asia"], 
+    
+    gaming$AvgSessionDurationMinutes[gaming$Location == "Asia"])
+
+cor(gaming$PlayTimeHours[gaming$Location == "Other"], 
+    
+    gaming$AvgSessionDurationMinutes[gaming$Location == "Other"])
+
+#-------------------------------------------
